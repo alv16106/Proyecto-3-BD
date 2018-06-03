@@ -1,5 +1,5 @@
 from faker import Faker
-from random import randint
+from random import randint, uniform
 import psycopg2
 import sys
 import pprint
@@ -7,11 +7,26 @@ import datetime
 
 #VARIABLES DE CONECCION
 connect_str = "dbname='chinook' user='rodrigo' host='localhost' password='Av99315peter'"
-# use our connection values to establish a connection
+# Establecemos coneccion
 conn = psycopg2.connect(connect_str)
-# create a psycopg2 cursor that can execute queries
+# Cursor para hacer querys
 cursor = conn.cursor()
 
+#CUAL ES LA PROBABIBLIDAD DE UN CLIENTE NUEVO?
+cln = 10
+#CUAL ES LA PROBABIBLIDAD DE UNA CANCION NUEVA?
+can = 1
+#VENTAS MINIMAS Y MAXIMAS
+vmin = 20
+vmax = 60
+
+#INICIALIZACION DE FAKER PARA CREACION DE CLIENTES, CANCIONES Y ALBUMES FALSOS
+fake = Faker('es_MX')
+
+#ARRAY CON PALABRAS COMUNES DE CANCIOENES PARA ALIMENTAR Faker
+cancionGenerica = ["Love", "Friend", "Hearth", "Hate", "Look", "The", "And", "Generiquino", "Scream", "Orchestra", "LMAO", "Please", "Me", "You", "Him", "Her", "Party"]
+
+#CUENTA LA CANTIDAD DE DATOS EN UNA TABLA
 def cuenta(tabla):
     cursor.execute("SELECT COUNT(*) FROM "+tabla+";")
     rows = cursor.fetchone()
@@ -24,62 +39,85 @@ nLineas = int(cuenta("invoiceline"))
 nArtistas = int(cuenta("artist"))
 nCanciones = int(cuenta("track"))
 nAlbumes = int(cuenta("album"))
+nGeneros = int(cuenta("genre"))
 
 #CLIENTE FALSO
 def crearClienteFalso():
-    fake = Faker('es_MX')
-    fake.first_name()#primer nombre
-    fake.last_name()#apellido
-    fake.company()#compania
-    fake.secondary_address()#direccion
-    fake.city()#ciudad
-    fake.state()#estado
-    fake.country()#pais
-    fake.postcode()#post code
-    fake.phone_number()#telefono
-    fake.phone_number()#fax
-    fake.email()#email
-    randint(0,1)#repid
+    global nClientes
+    nClientes += 1
+    #*******************id**********Primer nombre******* apellido******** compania********* direccion************* ciudad***** estado********* pais******** postcode********* telefono************** Fax*********** email******* repid
+    clienteFalso = (str(nClientes),fake.first_name(), fake.last_name(), fake.company(), fake.secondary_address(),fake.city(),fake.state(),fake.country(),fake.postcode(),fake.phone_number(),fake.phone_number(),fake.email(),str(randint(1,8)))
+    cursor.execute("INSERT INTO customer VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING CustomerId", clienteFalso)
+    return cursor.fetchone()[0]
 
+def crearCancionFalsa():
+    global nCanciones
+    nCanciones += 1
+    #***************id***********************************************Nombre************************************************************Album******************MediaTypeId************GenreId******************Composer***********Milliseconds******************************Bytes*************************Precio
+    cancionFalsa = (str(nCanciones),fake.sentence(nb_words=randint(1,4), variable_nb_words=True, ext_word_list=cancionGenerica), str(randint(1,nAlbumes)), str(randint(1,4)), str(randint(1,nGeneros)), fake.first_name(), str(randint(300000,880000)), str(randint(7000000,50000000)), round(uniform(0.5,2), 2))
+    cursor.execute("INSERT INTO track VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING TrackId", cancionFalsa)
+    return cursor.fetchone()[0]
+
+#SIMULAR LA CANTIDAD DE DIAS QUE SE DESEEN*******************************************
 def simular(dias):
+    ventasT = 0
+    gananciaT = 0
     inicio = datetime.datetime.now()
     step = datetime.timedelta(days=1)
     for dia in range(dias):
-        ventas = randint(20,60)
+        ventas = randint(vmin,vmax)
         for venta in range(ventas):
-            factura(inicio.strftime("%Y-%m-%d"))
+            gananciaT += factura(inicio.strftime("%Y-%m-%d"))
+            ventasT += 1
         inicio += step
+    print("Se generaron $"+str(gananciaT)+" mediante: "+str(ventasT)+" ventas")
+#*********************************************************************
 
+#ENCONTRAR LA INFORMACION DE UN CLIENTE PARA EL BILLING
+def getInfoCliente(id):
+    cursor.execute("SELECT Address, City, State, Country, PostalCode FROM customer WHERE CustomerId = %s", (id, ))
+    return cursor.fetchone()
+
+#ENCONTRAR EL PRECIO DE UNA CANCION
 def precio(id):
     cursor.execute("SELECT UnitPrice FROM track WHERE TrackId = %s", (id,))
     rows = cursor.fetchone()
-    print("El precio es: "+ str(rows[0]))
     return rows[0]
 
+#SIMULAR UNA VENTA
 def factura(fecha):
+    total = 0
     global nVentas
     lineas = randint(1,20)
-    cursor.execute("INSERT INTO invoice(InvoiceId, CustomerId, InvoiceDate, Total) VALUES (%s, %s, %s, %s) RETURNING InvoiceId", [str(nVentas), str(randint(1,nClientes)), fecha, "0"])
+    if randint(0,100)< cln:
+        cliente = str(crearClienteFalso())
+    else:
+        cliente = str(randint(1,nClientes))
+    billingInfo = getInfoCliente(cliente)
+    cursor.execute("INSERT INTO invoice VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING InvoiceId", [str(nVentas), cliente, fecha, billingInfo[0], billingInfo[1],  billingInfo[2], billingInfo[3], billingInfo[4], "0"])
     idF = cursor.fetchone()[0]
-    print("factura " + str(idF))
     for i in range(lineas):
-        linea(idF)
+        total += linea(idF)
     nVentas += 1
+    cursor.execute("UPDATE invoice SET total = %s WHERE InvoiceId = %s", (str(total), str(idF)))
+    return total
 
+#SIMULAR UNA LINEA DE VENTA
 def linea(id_factura):
     global nLineas
-    pista = randint(1,nCanciones)
-    cantidad = randint(1,5)
+    if randint(0,100)< cln:
+        pista = crearCancionFalsa()
+    else:
+        pista = randint(1,nCanciones)
+    cantidad = 1
     pre = precio(str(pista))
-    print(pre)
     cursor.execute("INSERT INTO invoiceline VALUES (%s, %s, %s, %s, %s)", [str(nLineas), str(id_factura), str(pista), str(pre), str(cantidad)])
     nLineas += 1
-    return int(pre) * cantidad
+    return float(pre) * cantidad
 
+#MAIN, PROBAR COSAS
 def main():
     try:
-        print(cuenta("genre"))
-        print(precio("1"))
         simular(2)
         conn.commit()
         cursor.close()
