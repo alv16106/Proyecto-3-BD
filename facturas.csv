@@ -1,0 +1,84 @@
+InvoiceId,CustomerId,InvoiceDate,BillingAddress,BillingCity,BillingState,BillingCountry,BillingPostalCode,Total
+546,66,2018-06-04,441 Interior 248,San José Carlos de la Montaña,Jalisco,Uruguay,91162,19.299999999999997
+547,14,2018-06-04,8210 111 ST NW,Edmonton,AB,Canada,T6G 2C7,1.98
+548,6,2018-06-04,Rilsk� 3174/6,Prague,,Czech Republic,14300,3.96
+549,73,2018-06-04,"656 Edif. 469 , Depto. 981",Vieja Andorra,Yucatán,Armenia,42314,16.26
+550,32,2018-06-04,696 Osborne Street,Winnipeg,MB,Canada,R3L 2B9,5.94
+551,131,2018-06-04,823 Interior 485,San Elias de la Montaña,Tamaulipas,Guatemala,34284,6.790000000000001
+552,120,2018-06-04,604 Interior 754,San Graciela los bajos,Hidalgo,Etiopía,36730,6.91
+553,23,2018-06-04,69 Salem Street,Boston,MA,USA,2113,17.49
+554,76,2018-06-04,433 Interior 768,San Ángela los bajos,Tlaxcala,Bangladesh,05020-0497,20.389999999999993
+555,32,2018-06-04,696 Osborne Street,Winnipeg,MB,Canada,R3L 2B9,7.0600000000000005
+556,83,2018-06-04,677 Interior 904,San Indira los bajos,Chihuahua,Uganda,09778-7546,4.53
+557,112,2018-06-04,079 Interior 427,Vieja República Árabe Siria,Campeche,República Democrática Popular Lao,59523-7692,16.43
+558,119,2018-06-04,"843 Edif. 923 , Depto. 544",Vieja Gabón,Jalisco,Arabia Saudita,88965-7480,7.28
+559,41,2018-06-04,"11, Place Bellecour",Lyon,,France,69002,18.43
+560,48,2018-06-04,Lijnbaansgracht 120bg,Amsterdam,VV,Netherlands,1016,19.989999999999995
+561,18,2018-06-04,627 Broadway,New York,NY,USA,10012-2612,1.8399999999999999
+562,67,2018-06-04,"368 Edif. 424 , Depto. 589",San Ángela de la Montaña,Hidalgo,Argelia,28144-9320,10.8
+563,99,2018-06-04,197 233,San María Teresa los bajos,Baja California,Bahrein,51604-7374,7.55
+564,82,2018-06-04,111 998,Vieja Suriname,Quintana Roo,Guinea,63949-2339,24.849999999999998
+565,6,2018-06-04,Rilsk� 3174/6,Prague,,Czech Republic,14300,2.9699999999999998
+566,40,2018-06-04,"8, Rue Hanovre",Paris,,France,75002,2.6100000000000003
+567,129,2018-06-04,"954 Edif. 159 , Depto. 187",Nueva Palau,Oaxaca,Austria,37004-3997,11.790000000000001
+568,27,2018-06-04,1033 N Park Ave,Tucson,AZ,USA,85719,1.98
+569,20,2018-06-04,541 Del Medio Avenue,Mountain View,CA,USA,94040-111,16.16
+570,53,2018-06-04,113 Lupus St,London,,United Kingdom,SW1V 3EN,14.280000000000001
+571,64,2018-06-04,227 Interior 552,Vieja Palau,Tlaxcala,Estonia,19104-2938,13.74
+572,153,2018-06-04,890 466,San Uriel de la Montaña,Querétaro,Guinea Ecuatorial,24207-1029,3.9299999999999997
+573,62,2018-06-04,845 Interior 013,Nueva Luxemburgo,Nayarit,Nueva Zelandia,13700,16.31
+574,154,2018-06-04,"180 Edif. 873 , Depto. 241",San Jonás de la Montaña,México,Argentina,69923-8489,1.56
+575,157,2018-06-04,944 181,Nueva Papua Nueva Guinea,Michoacán de Ocampo,Sri Lanka,12327-3784,8.280000000000001
+576,143,2018-06-04,"188 Edif. 390 , Depto. 027",Vieja Etiopía,Aguascalientes,Comoras,38395-4744,19.939999999999998
+577,158,2018-06-04,301 Interior 143,Vieja Eslovenia,Colima,Bangladesh,74635-4309,14.770000000000001
+578,62,2018-06-04,845 Interior 013,Nueva Luxemburgo,Nayarit,Nueva Zelandia,13700,17.080000000000002
+579,78,2018-06-04,"617 Edif. 780 , Depto. 174",San Arturo de la Montaña,Chihuahua,Bolivia,15515-2170,20.689999999999994
+580,77,2018-06-04,"721 Edif. 460 , Depto. 724",Nueva Myanmar,Sinaloa,Costa Rica,43434,13.230000000000002
+581,137,2018-06-04,016 Interior 959,San Socorro los bajos,Baja California,Eslovenia,01509-0865,22.099999999999994
+582,105,2018-06-04,"882 Edif. 713 , Depto. 617",Vieja Kirguistán,Tlaxcala,Honduras,49659,12.770000000000001
+583,158,2018-06-04,301 Interior 143,Vieja Eslovenia,Colima,Bangladesh,74635-4309,18.02
+584,22,2018-06-04,120 S Orange Ave,Orlando,FL,USA,32801,15.15
+585,75,2018-06-04,013 Interior 324,Nueva Camboya,Puebla,Paraguay,47607,7.34
+586,94,2018-06-04,987 558,Vieja Venezuela,Morelos,San Vicente y las Granadinas,22208-4919,24.629999999999995
+587,82,2018-06-04,111 998,Vieja Suriname,Quintana Roo,Guinea,63949-2339,16.270000000000003
+588,125,2018-06-04,624 Interior 537,Vieja Belice,San Luis Potosí,Guyana,68130,11.34
+589,135,2018-06-04,507 Interior 732,Vieja Kenya,San Luis Potosí,Papua Nueva Guinea,93822-7882,15.46
+590,120,2018-06-04,604 Interior 754,San Graciela los bajos,Hidalgo,Etiopía,36730,17.900000000000002
+591,8,2018-06-04,Gr�trystraat 63,Brussels,,Belgium,1000,10.88
+592,4,2018-06-04,Ullev�lsveien 14,Oslo,,Norway,0171,13.690000000000001
+593,159,2018-06-04,582 Interior 757,Vieja Côte d'Ivoire,Oaxaca,Trinidad y Tabago,21512,17.19
+594,149,2018-06-04,760 Interior 568,Vieja Serbia,Yucatán,Rwanda,58481,19.469999999999995
+595,149,2018-06-05,760 Interior 568,Vieja Serbia,Yucatán,Rwanda,58481,9.770000000000001
+596,129,2018-06-05,"954 Edif. 159 , Depto. 187",Nueva Palau,Oaxaca,Austria,37004-3997,23.109999999999992
+597,17,2018-06-05,1 Microsoft Way,Redmond,WA,USA,98052-8300,9.96
+598,89,2018-06-05,083 Interior 732,San Bruno los altos,Jalisco,Chile,87275,5.94
+599,159,2018-06-05,582 Interior 757,Vieja Côte d'Ivoire,Oaxaca,Trinidad y Tabago,21512,8.290000000000001
+600,60,2018-06-05,500 449,San Esperanza los bajos,Campeche,Colombia,85619,23.389999999999997
+601,38,2018-06-05,Barbarossastra�e 19,Berlin,,Germany,10779,16.48
+602,160,2018-06-05,"723 Edif. 671 , Depto. 390",San Violeta los altos,Colima,Niger,05914,24.759999999999994
+603,118,2018-06-05,725 927,Nueva Swazilandia,Puebla,Panamá,32585-7496,7.940000000000001
+604,151,2018-06-05,366 477,San Cristina los altos,Quintana Roo,Papua Nueva Guinea,50344-5526,1.99
+605,59,2018-06-05,"3,Raj Bhavan Road",Bangalore,,India,560001,15.46
+606,96,2018-06-05,745 Interior 586,Nueva Samoa,San Luis Potosí,Montenegro,36076-2358,13.88
+607,115,2018-06-05,"268 Edif. 824 , Depto. 962",Vieja Uganda,Chiapas,Croacia,97127,5.920000000000001
+608,161,2018-06-05,686 Interior 946,Vieja Mauritania,Tabasco,Senegal,33627-1442,10.48
+609,52,2018-06-05,202 Hoxton Street,London,,United Kingdom,N1 5LH,4.95
+610,61,2018-06-05,"994 Edif. 526 , Depto. 309",San Leonor de la Montaña,Zacatecas,Islas Salomón,10476,21.269999999999996
+611,11,2018-06-05,"Av. Paulista, 2022",S�o Paulo,SP,Brazil,01310-200,10.950000000000001
+612,141,2018-06-05,903 583,San Juana de la Montaña,Tamaulipas,Belice,15996-0674,19.579999999999995
+613,101,2018-06-05,885 963,San Cristian los bajos,Sinaloa,España,11588-0967,6.5600000000000005
+614,70,2018-06-05,"336 Edif. 302 , Depto. 485",San Frida los bajos,Sonora,Cabo Verde,12259-4154,9.180000000000001
+615,114,2018-06-05,022 185,San Zeferino de la Montaña,Oaxaca,Arabia Saudita,43900,9.42
+616,108,2018-06-05,388 Interior 694,Nueva Niger,Tlaxcala,España,97272-2388,16.830000000000002
+617,3,2018-06-05,1498 rue B�langer,Montr�al,QC,Canada,H2G 1A7,21.209999999999997
+618,118,2018-06-05,725 927,Nueva Swazilandia,Puebla,Panamá,32585-7496,10.63
+619,23,2018-06-05,69 Salem Street,Boston,MA,USA,2113,16.75
+620,133,2018-06-05,121 Interior 085,San Aldo de la Montaña,Sonora,Bahrein,16127,18.599999999999998
+621,59,2018-06-05,"3,Raj Bhavan Road",Bangalore,,India,560001,0.99
+622,109,2018-06-05,355 Interior 426,Nueva Mongolia,Guanajuato,Noruega,49816-3074,4.13
+623,162,2018-06-05,"909 Edif. 032 , Depto. 082",San Gonzalo los altos,Coahuila de Zaragoza,Venezuela,91618,1.98
+624,122,2018-06-05,416 Interior 654,San Wilfrido los bajos,Sonora,Kazajstán,97911,7.4
+625,137,2018-06-05,016 Interior 959,San Socorro los bajos,Baja California,Eslovenia,01509-0865,2.3899999999999997
+626,39,2018-06-05,"4, Rue Milton",Paris,,France,75009,1.98
+627,163,2018-06-05,772 Interior 716,Vieja San Marino,Nuevo León,Congo,95140-3840,14.540000000000001
+628,110,2018-06-05,"995 Edif. 697 , Depto. 498",San Ivonne los altos,Colima,Benin,95752-3447,14.380000000000003
