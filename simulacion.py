@@ -13,7 +13,7 @@ facturas = [["InvoiceId", "CustomerId", "InvoiceDate", "BillingAddress", "Billin
 lineasFactura = [["InvoiceLineId", "InvoiceId", "TrackId", "UnitPrice", "Quantity"]]
 
 #VARIABLES DE CONECCION
-connect_str = "dbname='chinook' user='rodrigo' host='localhost' password='Av99315peter'"
+connect_str = "dbname='chinook' user='postgres' host='localhost' password='123456'"
 # Establecemos coneccion
 conn = psycopg2.connect(connect_str)
 # Cursor para hacer querys
